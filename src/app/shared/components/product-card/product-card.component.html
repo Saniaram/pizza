@@ -1,0 +1,17 @@
+<div class="product"  >
+  <div class="product__image">
+    <img src="{{product.image}}">
+  </div>
+
+  <custom-title [title]="product.title"></custom-title>
+
+
+  <div class="product__text">
+    {{product.description }}
+  </div>
+  <div class="product__action" #elem>
+    <a class="btn product__btn btn-add-to-cart" routerLink="/order" [queryParams]="{product: product.title}">В корзину</a>
+    <a class="btn product__btn btn-white" [routerLink]="['/products', product.id]" [queryParams]="{product: product.title}">Подробнее</a>
+  </div>
+</div>
+<!--(click)="addToCart(product, orderElement)"-->
